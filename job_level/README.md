@@ -6,9 +6,11 @@ This script generates a job-level dataset by combining Slurm accounting records,
 
 ## Input Data Sources
 
-### 1. Slurm Accounting Data (`sacctlog.csv`)
+The following input sources are used for the formation of the final datasets (jobs_energy_CI_Dataset.csv and jobs_CI_ipmi_energy_dataset.csv)
 
-The Slurm accounting dataset contains completed job records exported using `sacct`. Relevant fields include:
+### 1. Slurm Accounting Data
+
+The input Slurm accounting dataset contains completed job records exported using `sacct`. Relevant fields include:
 
 * JobID
 * Submit time
@@ -93,7 +95,7 @@ This approach accounts for overlapping jobs and varying node utilization while a
 
 ## Output Dataset
 
-The final dataset contains:
+1. Final workload energy accounting dataset (jobs_energy_CI_Dataset.csv) for a one year period and containing the following information:
 
 ### Job Information
 
@@ -122,6 +124,8 @@ The final dataset contains:
 * Carbon intensity
 * Carbon emissions (gCO₂)
 * Carbon emissions (kgCO₂)
+
+2. Complementing the above dataset is another workload energy accounting dataset (jobs_CI_ipmi_energy_dataset.csv) for a week long duration period only and containing the following information in addition to the information given in the above dataset:
 
 ### IPMI Energy Metrics
 
@@ -155,10 +159,3 @@ The script produces:
 
   * Slurm energy metrics, IPMI-derived energy metrics, and carbon estimates.
 
-* `runtime_vs_energy.png`
-
-  * Scatter plot of job runtime versus energy consumption.
-
-* `runtime_vs_njobs.png`
-
-  * Histogram of job runtimes.
