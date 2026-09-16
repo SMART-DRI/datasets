@@ -19,18 +19,15 @@ There are four datasets:
 ```text
 .
 |-- CI_data/
-|   `-- Carbon_Intensity_Data.csv
+|   `-- Carbon_Intensity_Data*.csv
 |-- job_level/
 |   |-- README.md
 |   |-- jobs_CI_ipmi_energy_dataset.csv
 |   `-- jobs_energy_CI_Dataset.csv
-|-- node_level/
-|   `-- Nodes_Rack*_power.csv
 `-- siteDRI_level/
     |-- README.md
-    |-- EnergyConsumption_09-16April2026.csv
-    |-- WP3_SMARTDRI.odt
-    `-- pue_energy_30min.csv
+    |-- data_center_operations.md
+    `-- data_center_energy.csv
 ```
 
 ## Dataset Summary
