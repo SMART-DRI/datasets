@@ -10,10 +10,9 @@ There are four datasets:
 
 | Directory | Contents | Scale |
 | --- | --- | --- |
-| [`job_level/`](#job-level-datasets) | Job-level Slurm, energy, carbon, and IPMI-derived metrics | 2 CSV files, 132,521 jobs each |
-| [`node_level/`](#node-level-power-datasets) | Rack-level node power readings from IPMI telemetry | 20 CSV files, 2,751,840 readings, 272 nodes |
-| [`CI_data/`](#carbon-intensity-dataset) | Grid carbon intensity observations and forecasts | 358 records |
-| [`siteDRI_level/`](#site-data-centre-datasets) | Facility-level energy, PUE, and data-centre configuration data | 2 CSV files, 1 configuration document |
+| [`job_level/`](#job-level-datasets) | Job-level Slurm, energy, carbon, and IPMI-derived metrics | 2 CSV files |
+| [`CI_data/`](#carbon-intensity-dataset) | Grid carbon intensity observations and forecasts | 12 CSV files |
+| [`siteDRI_level/`](#site-data-centre-datasets) | Facility-level energy, PUE, and data-centre configuration data | 1 CSV file, 1 configuration document |
 
 ## Repository Layout
 
@@ -44,25 +43,11 @@ data.
 
 | File | Rows | Description |
 | --- | ---: | --- |
-| `job_level/jobs_energy_CI_Dataset.csv` | 132,521 | Job runtime, queue wait time, node allocation, Slurm-reported energy, CPU-scaled job energy, and estimated carbon emissions. |
-| `job_level/jobs_CI_ipmi_energy_dataset.csv` | 132,521 | Extends the Slurm-derived dataset with matched carbon intensity, IPMI-derived energy, IPMI-derived carbon emissions, and the IPMI-to-Slurm energy ratio. |
+| `job_level/jobs_energy_CI_Dataset.csv` | 4630111 | Job runtime, queue wait time, node allocation, Slurm-reported energy, CPU-scaled job energy, and estimated carbon emissions. |
+| `job_level/jobs_CI_ipmi_energy_dataset.csv` | 132,522 | Extends the Slurm-derived dataset with matched carbon intensity, IPMI-derived energy, IPMI-derived carbon emissions, and the IPMI-to-Slurm energy ratio. |
 
 See [`job_level/README.md`](job_level/README.md) for the full processing notes,
 energy-allocation assumptions, and limitations.
-
-### Node-Level Power Datasets
-
-The `node_level/` directory contains one CSV file per monitored rack:
-`Nodes_Rack18_power.csv` through `Nodes_Rack39_power.csv`. The racks are not
-numbered fully consecutively.
-
-Each file has the same schema:
-
-| Column | Description |
-| --- | --- |
-| `timestamp` | Measurement timestamp. |
-| `node` | Node identifier. |
-| `power_w` | Instantaneous node power in watts. |
 
 ### Carbon Intensity Dataset
 
@@ -89,10 +74,8 @@ context for the monitored data centre.
 
 | File | Rows | Description |
 | --- | ---: | --- |
-| `siteDRI_level/pue_energy_30min.csv` | 355 | 30-minute IT energy, IRC energy, cooling-plant panel energy, final IT energy, final facility energy, and PUE values. |
-| `siteDRI_level/EnergyConsumption_09-16April2026.csv` | 357 | Raw 30-minute meter readings for panel board and monitored machine-room feeds. |
-| `siteDRI_level/WP3_SMARTDRI.odt` | - | Static facility configuration notes, including infrastructure parameters used for interpretation. |
-| `siteDRI_level/WP3_SMARTDRI.md` | - | Markdown version of the above file |
+| `siteDRI_level/data_center_energy.csv` | 8451 | 30-minute IT energy, IRC energy, cooling-plant panel energy, final IT energy, final facility energy, and PUE values. |
+| `siteDRI_level/data_center_operations.md` | - | Static facility configuration notes, including infrastructure parameters used for interpretation. |
 
 See [`siteDRI_level/README.md`](siteDRI_level/README.md) for details on the
 facility energy measurements, PUE calculation context, and district-heating
