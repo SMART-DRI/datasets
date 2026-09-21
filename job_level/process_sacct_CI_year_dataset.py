@@ -73,7 +73,7 @@ usecols = [
     "AllocCPUS", "NNodes", "ConsumedEnergy"
 ]
 
-CI_FILE_GLOB = "/home/sudha/WorkDir/SustainabilityStudies/NetDRIVE_2025_2026/SMART_DRI/WP1_datasets/CI_data/Carbon_Intensity_Data_*.csv"
+CI_FILE_GLOB = "CI_data/Carbon_Intensity_Data_*.csv"
 
 ci_dfs = []
 
