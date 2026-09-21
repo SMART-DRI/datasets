@@ -2,7 +2,8 @@
 
 ## Overview
 
-This script generates a job-level dataset by combining Slurm accounting records, node-level IPMI power measurements, and grid carbon intensity data. The resulting dataset contains job runtime information, queue waiting times, estimated energy consumption, and associated carbon emissions.
+The scripts `process_sacct_CI_year_dataset.py` (output - jobs_CI_energy_dataset.csv) and `process_sacct_CI_ipmi_week_dataset.py` (output - jobs_CI_ipmi_energy_dataset.csv) generate job-level workload and sustainability datasets by combining Slurm accounting records with grid carbon-intensity data. The week-long dataset (jobs_CI_ipmi_energy_dataset.csv) additionally integrates node-level IPMI power measurements to derive job-level energy consumption. The resulting datasets contain job runtime information, queue waiting times, resource allocation, carbon intensity, and associated energy and carbon-emissions estimates where available.
+
 
 ## Input Data Sources
 
@@ -52,6 +53,7 @@ For each completed job:
   Runtime = End Time − Start Time
 
 * Waiting time is derived from Slurm's `Planned` field, which represents the interval between job eligibility and job start.
+
 
 ### Energy Processing
 
