@@ -2,9 +2,15 @@
 
 ## Overview
 
-This directory contains data describing the operational energy consumption and infrastructure characteristics of the QMUL data centre over a six-month monitoring period. The dataset provides facility-level energy measurements alongside key data centre operating parameters and infrastructure information that can be used to support energy analysis, carbon footprint estimation, and sustainability studies.
+This directory contains the raw-data processing script and its output dataset, describing the operational energy consumption and infrastructure characteristics of the QMUL data centre over a six-month monitoring period. The dataset combines facility-level energy measurements with key operational parameters and infrastructure information to support energy analysis, carbon-footprint estimation, PUE assessment, and broader sustainability studies.
 
-### 1. Data Centre Energy Dataset (data_center_energy.csv)
+
+### Facility energy and PUE dataset processing script
+
+- `process_energy_pue.py` – Processes and aligns facility, IT and cooling energy measurements, applies quality-control filtering, derives energy metrics and PUE, and generates the processed dataset (data_center_energy.csv) and associated validation plots.
+
+
+### Data Centre Energy Dataset (data_center_energy.csv)
 
 This CSV file contains facility energy measurements recorded at **30-minute intervals**.
 
@@ -29,7 +35,8 @@ The dataset includes:
 
 These measurements provide a time series of the facility's operational energy profile and infrastructure efficiency throughout the monitoring period.
 
-## 2. Data Centre Configuration Information (data_center_operations.md)
+
+## Data Centre Configuration Information (data_center_operations.md)
 
 This file contains static information describing the characteristics of the HPC facility used during analysis.
 
